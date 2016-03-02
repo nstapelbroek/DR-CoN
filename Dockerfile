@@ -3,10 +3,8 @@ FROM nginx:1.7
 #Install Curl
 RUN apt-get update -qq && apt-get -y install curl
 
-#Link to Consul Template Binary
+#Download and Install Consul Template
 ENV CT_URL http://bit.ly/15uhv24
-
-#Install Consul Template
 RUN curl -L $CT_URL | \
 tar -C /usr/local/bin --strip-components 1 -zxf -
 
